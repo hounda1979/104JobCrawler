@@ -1,0 +1,13 @@
+Java
+C
+C++
+C#
+JavaScript
+JQuery
+AJAX
+HTML
+CSS
+PHP
+Python
+RWD
+Android
