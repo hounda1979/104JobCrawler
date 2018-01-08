@@ -19,6 +19,8 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
+import hd.crawler.main.Cltxt;
+
 
 
 /**
@@ -27,6 +29,7 @@ import org.apache.http.impl.client.HttpClients;
  *
  */
 public class LoaderHtml {
+	Cltxt cl = new Cltxt();
 	/**
 	 * 
 	 * @param url 下載目標的網址
@@ -77,7 +80,7 @@ public class LoaderHtml {
 				{
 					in.close();
 				}
-				String saveUrl = "D:/104dbhtml/";
+				String saveUrl = cl.getSaveUrl();
 				OutputStreamWriter output = null;
 				Timestamp ts = new Timestamp(System.currentTimeMillis()); //时间戳
 				DateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
@@ -86,13 +89,9 @@ public class LoaderHtml {
 				if(depth.equals("1")){
 				fileName = saveUrl + fileNumber + ".html";
 				}else{
-					fileName = saveUrl+"sc/" + fileNumber + ".html";
+					fileName = cl.getLocalhtml() + fileNumber + ".html";
 				}
-				File file = new File(saveUrl+"sc");
-				if(!file.exists())
-				{
-					file.mkdir();
-				}
+				
 				output = new OutputStreamWriter(
 					new FileOutputStream(fileName), "UTF-8");
 				output.write(content.toString());

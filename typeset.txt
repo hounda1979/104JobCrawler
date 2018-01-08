@@ -11,3 +11,10 @@ PHP
 Python
 RWD
 Android
+JSP
+Node.js
+Servlet
+Struts
+Hibernate
+Spring
+AngularJs

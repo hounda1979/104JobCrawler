@@ -42,6 +42,7 @@ Jobdata JD;
 		
 		return temp;
 	}
+	
 	public Jobdata getNeedData(String filename){
 		
 		JD = new Jobdata();

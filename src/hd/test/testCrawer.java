@@ -171,9 +171,5 @@ public class testCrawer {
 		
 		return b;
 	}
-	/*public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		testCrawer tc = new testCrawer();
-	}*/
-
+	
 }
