@@ -9,10 +9,25 @@ import java.io.IOException;
 public class Cltxt {
 	private String saveUrl; //存放路徑
 	private String Localhtml; //本地端路徑
-	public String getSaveUrl() {
+	private String SQLiteDbName ; //db存放路徑
+	private String CSVFileName; //csv 檔案存放名
+	private String cat ; //查詢職務
+	private String area ; //查詢地區
+ 	public String getSaveUrl() {
 		return saveUrl;
 	}
-	
+	public String getSQLiteDbName(){
+		return SQLiteDbName;
+	}
+	public String getCSVFileName() {
+		return CSVFileName;
+	}
+	public String getCat() {
+		return cat;
+	}
+	public String getArea() {
+		return area;
+	}
 	public String getLocalhtml() {
 		return Localhtml;
 	}
@@ -29,15 +44,27 @@ public class Cltxt {
 				while(br.ready()){
 					String str = br.readLine();
 					String[] strsplit = str.split(",");
-					//System.out.println(strsplit[1]);
-					if(strsplit[0].equals("SaveUrl")){
-						saveUrl =strsplit[1];
-						System.out.println(strsplit[1]);
-					}
-					if(strsplit[0].equals("Localhtml")){
-						Localhtml = strsplit[1];
-						//System.out.println(strsplit[1]);
-						
+					
+					switch(strsplit[0]){
+					case "SaveUrl" :
+						this.saveUrl =strsplit[1];
+						break;
+					case "Localhtml" :
+						this.Localhtml = strsplit[1];
+						break;
+					case "SQLiteDbName" :
+						this.SQLiteDbName = strsplit[1];
+						break;
+					case "CSVFileName" :
+						this.CSVFileName = strsplit[1];
+						break;						
+					case "cat" :
+						this.cat = strsplit[1];
+						break;
+					case "area" :
+						this.area = strsplit[1];
+						break;
+					
 					}
 					
 				}

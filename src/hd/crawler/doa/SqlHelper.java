@@ -52,7 +52,17 @@ public class SqlHelper {
 		}
 		return ct;
 	}
-	
+	public static void CreateTable(String sql){
+		Statement stmt =null;
+		try {
+			stmt = ct.createStatement();
+			stmt.executeQuery(sql);
+			ct.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	//先寫一個 update / delete / insert
 	//sql 格式: update 表名 set 字段名=? where 字段=?
 	//parameters 應該是 {"abd",123}

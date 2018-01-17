@@ -1,2 +1,5 @@
 SaveUrl,D:\\104job\\
 Localhtml,D:\\104job\\html\\
+CSVFileName,T2018
+cat,2007001004
+area,6001005000

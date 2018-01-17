@@ -29,21 +29,22 @@ import hd.crawler.main.Cltxt;
  *
  */
 public class LoaderHtml {
-	Cltxt cl = new Cltxt();
+	//Cltxt cl = new Cltxt();
+	int countNum = 0;
 	/**
 	 * 
 	 * @param url 下載目標的網址
 	 * @param depth 判斷下載那一層網頁
 	 * @return fileName 回傳儲存的檔案名
 	 */
-	public String downLoad(String url ,String depth){
+	public String downLoad(String url ,String depth ,Cltxt cl){
 		String fileName = null; //页面下载后保存的文件名
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		HttpPost httpost = new HttpPost(url);
 		RequestConfig reqConfig = null;
 		reqConfig = RequestConfig.custom()
-				.setConnectTimeout(10000) //设置连接超时
-				.setSocketTimeout(10000) //设置数据获取超时
+				.setConnectTimeout(9000) //设置连接超时
+				.setSocketTimeout(9000) //设置数据获取超时
 				.setConnectionRequestTimeout(10000)
 				.build();
 		httpost.setConfig(reqConfig);
@@ -99,8 +100,10 @@ public class LoaderHtml {
 				
 				
 			}else{
-				System.out.println("F : "+url);
+				
+				System.out.println("連線失敗 : "+url );
 				fileName = "f";
+				
 				}
 		
 	
