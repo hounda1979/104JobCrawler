@@ -19,11 +19,11 @@
 		使用Eclipse製作可執行Jar  
 		3.0 : 先把Urlinfo.txt備份到預匯出JAR的位置,之後移除它.
 		3.1 : 點擊專案並按下滑鼠右鍵 > 選擇Export
-		![選擇export](https://github.com/hounda1979/104JobCrawler/tree/master/image/image_5.png)
+		![選擇export](https://github.com/hounda1979/104JobCrawler/blob/master/image_5.png)
 		3.2 : 選擇 Runnable JAR file
-		![選擇Runnable JAR file](https://github.com/hounda1979/104JobCrawler/tree/master/image/image_6.png)
+		![選擇Runnable JAR file](https://github.com/hounda1979/104JobCrawler/blob/master/image_6.png)
 		3.3 : Launch configuration 設定程式進入點(Main), Export destination 設定匯出 JAR file 路徑(包含檔名), 點選 Finish 後即可自動匯出並自動設定 MANIFEST.MF
-		![選擇程式進入點,完成設定](https://github.com/hounda1979/104JobCrawler/tree/master/image/image_7.png)
+		![選擇程式進入點,完成設定](https://github.com/hounda1979/104JobCrawler/blob/master/image_7.png)
 		
 
 ### 4: 使用說明 :   
