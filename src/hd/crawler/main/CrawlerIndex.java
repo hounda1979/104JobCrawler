@@ -47,6 +47,9 @@ public class CrawlerIndex {
 		lo = new LoaderHtml();
 		ps = new Pageresolver();
 		int con = this.getNum() / 20;
+		if(con > 30){
+			con =30;
+		}
 		for (int a = 0; a < con; a++) {
 			String url = "https://www.104.com.tw/jobs/search/?ro=1&jobcat="+cl.getCat()+"&area="+cl.getArea()+"&order=2&asc=0&page="
 					+ a + "&mode=s&jobsource=n104bank1";
@@ -61,10 +64,11 @@ public class CrawlerIndex {
 
 		CrawlerIndex cx = new CrawlerIndex();
 		
+		
 		System.out.println("開始爬蟲....................................");
 		startTime = System.currentTimeMillis();
-		notCrawlurList = ps.getAllIdAddress();
-		 fisturl();
+		fisturl();
+		
 		
 	}
 
@@ -73,7 +77,7 @@ public class CrawlerIndex {
 			long endTime = System.currentTimeMillis();
 			System.out.println("第一層下載完成");
 			System.out.println("總共花費了 :" + (endTime - startTime) / 1000 + " 秒");
-			notCrawlurList = ps.getAllIdAddress();
+			notCrawlurList = ps.getAllIdAddress(cl);
 			secondurl();
 			return;
 		}
@@ -259,4 +263,5 @@ public class CrawlerIndex {
 
 		return count;
 	}
+
 }
