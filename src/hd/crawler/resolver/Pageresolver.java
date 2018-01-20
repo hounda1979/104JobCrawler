@@ -13,6 +13,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import hd.crawler.doa.jobdbCI;
+import hd.crawler.main.Cltxt;
 import hd.crawler.vo.Jobdata;
 
 public class Pageresolver {
@@ -25,9 +26,9 @@ Jobdata JD;
  * 取得所有要下載的網址
  * @return 回傳網址
  */
-	public ArrayList<String> getAllIdAddress(){
+	public ArrayList<String> getAllIdAddress(Cltxt cl){
 		ArrayList<String> temp = new ArrayList<String>();
-		setList =  this.getFileName();
+		setList =  this.getFileName(cl);
 		String[] address = new String[setList.size()];
 		setList.toArray(address);
 		for(int i = 0 ; i < address.length ; i++){
@@ -168,9 +169,9 @@ Jobdata JD;
 	 * 取得本地端檔案名
 	 * @return
 	 */
-	private ArrayList<String> getFileName(){
+	private ArrayList<String> getFileName(Cltxt cl){
 		setList = new ArrayList<String>();
-		File f = new File("D:/104dbhtml/html");
+		File f = new File(cl.getSaveUrl());
 		File [] fl = f.listFiles();
 		for(int i = 0 ; i < f.listFiles().length ; i++){
 			String temp = fl[i].toString();
