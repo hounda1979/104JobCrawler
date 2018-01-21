@@ -30,7 +30,7 @@
 		
 
 ### 4: 使用說明 :   
-		4.1 : 檢查 Urlinfo.txt 和 JAR file 是否在同一目錄下.
+		4.1 : 檢查 Urlinfo.txt , typeset.txt ,104job.db 和 JAR file 是否在同一目錄下.
 		4.2 : 直到點擊二下即可執行.
 		4.3 : 如不能執行.使用Command line(命令提示字元) > 進入 JAR file 目錄  > 執行 java -jar 匯出 JAR file的 檔名.jar 
 
